@@ -60,39 +60,42 @@
           <!-- Navbar Right Side  -->
           <div class="nav-right">
             <!-- App Logo  -->
-            <a href="#" aria-current="page" aria-label="app logo">
-              <img src="assets/images/png/app-logo.png" alt="app logo">
+            <a href="#" aria-current="page" aria-label="صفحه اصلی">
+              <img src="assets/images/png/app-logo.png" alt="آیکون لوگوی فروشگاه قهوه">
             </a>
             <!-- Navigation  -->
             <ul class="menu">
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">صفحه اصلی</a></li>
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">فروشگاه</a></li>
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">دیکشنری</a></li>
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">بلاگ</a></li>
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">درباره ما</a></li>
-              <li class="menu__items"><a href="#" aria-label="" class="menu__links">تماس با ما</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">صفحه اصلی</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">فروشگاه</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">دیکشنری</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">بلاگ</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">درباره ما</a></li>
+              <li class="menu__items"><a href="#" class="menu__links">تماس با ما</a></li>
             </ul>
           </div>
           <!-- Navbar Left Side  -->
           <div class="nav-left">
             <div class="nav-left__right-side">
               <!-- Shopping Cart  -->
-              <button type="button" aria-label="shopping cart button">
+              <button type="button" aria-label="سبد خرید">
                 <svg class="size-8">
                   <use href="#shopping-cart"></use>
                 </svg>
               </button>
               <!-- Dark Mode Toggle Button  -->
-              <button type="button" aria-label="dark mode button">
+              <button type="button" aria-label="حالت تاریک" aria-pressed="false" id="dark-mode-toggle">
                 <svg class="size-8">
                   <use href="#moon"></use>
+                </svg>
+                <svg class="size-8 hidden">
+                  <use href="#sun"></use>
                 </svg>
               </button>
             </div>
             <!-- Login & Register Button  -->
             <div class="nav-left__left-side">
               <a href="#">
-                <svg class="size-8 rotate-180">
+                <svg class="size-8 rotate-180" aria-hidden="false">
                   <use href="#arrow-left-on-rectangle"></use>
                 </svg>
                 <span>ورود  |  ثبت‌نام</span>
