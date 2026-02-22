@@ -6,7 +6,6 @@
       "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
-    --color-red-700: oklch(50.5% 0.213 27.518);
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -160,5 +159,49 @@
   }
 }
 @layer utilities {
-  
+  .hidden {
+    display: none;
+  }
+}
+@font-face {
+  font-family: dana-semibold;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: dana-medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: dana-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Bold;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Light;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
 }
