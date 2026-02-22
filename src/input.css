@@ -1,1 +1,85 @@
 @import "tailwindcss";
+
+/* fonts  */
+@font-face {
+  font-family: dana-semibold;
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
+}
+@font-face {
+  font-family: dana-medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: dana-regular;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Bold;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Medium;
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
+}
+@font-face {
+  font-family: Morabba-Light;
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("../assets/fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+}
+
+@theme {
+
+  /* Colors  */
+  --color-orange-300: rgba(253, 186, 116, 1);
+  --color-orange-200: rgba(254, 215, 170, 1);
+  --color-teal-600: rgba(13, 148, 136, 1);
+  --color-teal-700: rgba(15, 118, 110, 1);
+  --color-emerald-500: rgba(16, 185, 129, 1);
+  --color-emerald-600: rgba(5, 150, 105, 1);
+  --color-red-400: rgba(248, 113, 113, 1);
+  --color-yellow-400: rgba(250, 204, 21, 1);
+  --color-amber-900: rgba(120, 53, 15, 1);
+  --color-gray-400: rgba(156, 163, 175, 1);
+  --color-gray-300: rgba(209, 213, 219, 1);
+  --color-gray-100: rgba(243, 244, 246, 1);
+  --color-zinc-700: rgba(63, 63, 70, 1);
+  --color-zinc-600: rgba(82, 82, 91, 1);
+  --color-white: rgba(255, 255, 255, 1);
+  --color-white-10: rgba(156, 163, 175, 1);
+  --color-brown-900: rgba(99, 72, 50, 1);
+  --color-brown-600: rgba(150, 114, 89, 1);
+  --color-brown-300: rgba(219, 193, 172, 1);
+  --color-brown-100: rgba(236, 224, 209, 1);
+
+  /* Shadow  */
+  --shadow-light-mode: 0px 1px 10px 0px rgba(0, 0, 0, 0.05);
+  --shadow-dark-mode: 0px 1px 10px 0px rgba(0, 0, 0, 0.05);
+
+  /* Fonts  */
+  --font-dana-semibold: "dana-semibold";
+  --font-dana-medium: "dana-medium";
+  --font-dana-regular: "dana-regular";
+  --font-morabba-bold: "Morabba-Bold";
+  --font-morabba-medium: "Morabba-Medium";
+  --font-morabba-light: "Morabba-Light";
+
+
+
+}
