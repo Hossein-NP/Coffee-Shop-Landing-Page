@@ -53,29 +53,29 @@
     </svg>
 
     <!-- *-* Header *-*  -->
-    <header class="header">
-      <div class="container">
+    <header class="header bg-black/50 backdrop-blur-md w-[90%] mx-auto rounded-3xl mt-9">
         <!-- Navbar  -->
-        <nav class="nav">
+        <nav class="nav flex items-center justify-between px-10 py-5">
           <!-- Navbar Right Side  -->
-          <div class="nav-right">
+          <div class="nav-right flex items-center">
             <!-- App Logo  -->
             <a href="#" aria-current="page" aria-label="صفحه اصلی">
               <img src="assets/images/png/app-logo.png" alt="آیکون لوگوی فروشگاه قهوه">
             </a>
             <!-- Navigation  -->
-            <ul class="menu">
-              <li class="menu__items"><a href="#" class="menu__links">صفحه اصلی</a></li>
-              <li class="menu__items"><a href="#" class="menu__links">فروشگاه</a></li>
-              <li class="menu__items"><a href="#" class="menu__links">دیکشنری</a></li>
-              <li class="menu__items"><a href="#" class="menu__links">بلاگ</a></li>
-              <li class="menu__items"><a href="#" class="menu__links">درباره ما</a></li>
-              <li class="menu__items"><a href="#" class="menu__links">تماس با ما</a></li>
+            <ul class="menu flex items-center gap-8 mr-8 font-dana-regular text-lg text-gray-300">
+              <li class="menu__items group"><a href="#" class="active menu__links text-orange-200 font-dana-medium transition-colors duration-100 ease-in-out group-hover:text-orange-200" >صفحه اصلی</a></li>
+              <li class="menu__items group"><a href="#" class="menu__links transition-colors duration-100 ease-in-out group-hover:text-orange-200">فروشگاه</a></li>
+              <li class="menu__items group"><a href="#" class="menu__links transition-colors duration-100 ease-in-out group-hover:text-orange-200">دیکشنری</a></li>
+              <li class="menu__items group"><a href="#" class="menu__links transition-colors duration-100 ease-in-out group-hover:text-orange-200">بلاگ</a></li>
+              <li class="menu__items group"><a href="#" class="menu__links transition-colors duration-100 ease-in-out group-hover:text-orange-200">درباره ما</a></li>
+              <li class="menu__items group"><a href="#" class="menu__links transition-colors duration-100 ease-in-out group-hover:text-orange-200">تماس با ما</a></li>
             </ul>
           </div>
           <!-- Navbar Left Side  -->
-          <div class="nav-left">
-            <div class="nav-left__right-side">
+          <div class="nav-left flex items-center text-orange-200 divide-x  divide-gray-300/20">
+            <!-- Dark Toggle & Shopping Cart  -->
+            <div class="nav-left__right-side flex items-center gap-5 pl-10">
               <!-- Shopping Cart  -->
               <button type="button" aria-label="سبد خرید">
                 <svg class="size-8">
@@ -93,8 +93,8 @@
               </button>
             </div>
             <!-- Login & Register Button  -->
-            <div class="nav-left__left-side">
-              <a href="#">
+            <div class="nav-left__left-side pr-10">
+              <a href="#" class="flex items-center gap-2">
                 <svg class="size-8 rotate-180" aria-hidden="false">
                   <use href="#arrow-left-on-rectangle"></use>
                 </svg>
@@ -103,7 +103,6 @@
             </div>
           </div>
         </nav>
-      </div>
     </header>
 
 
