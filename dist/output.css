@@ -433,11 +433,24 @@
       transition-duration: var(--tw-duration, var(--default-transition-duration));
     }
   }
+  .after\:delay-200 {
+    &::after {
+      content: var(--tw-content);
+      transition-delay: 200ms;
+    }
+  }
   .after\:duration-100 {
     &::after {
       content: var(--tw-content);
       --tw-duration: 100ms;
       transition-duration: 100ms;
+    }
+  }
+  .after\:duration-200 {
+    &::after {
+      content: var(--tw-content);
+      --tw-duration: 200ms;
+      transition-duration: 200ms;
     }
   }
   .hover\:text-orange-200 {
