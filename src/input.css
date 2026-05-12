@@ -1,51 +1,69 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
 
-/* fonts  */
-@font-face {
-  font-family: dana-semibold;
-  font-style: normal;
-  font-weight: 700;
-  font-display: swap;
-  src: url("../assets/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2") format("woff2");
-}
-@font-face {
-  font-family: dana-medium;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: dana-regular;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../assets/fonts/Dana/woff2/DanaFaNum-Regular.woff2") format("woff2");
-}
-@font-face {
-  font-family: Morabba-Bold;
-  font-style: normal;
-  font-weight: 200 700;
-  font-display: swap;
-  src: url("../assets/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
-}
-@font-face {
-  font-family: Morabba-Medium;
-  font-style: normal;
-  font-weight: 500;
-  font-display: swap;
-  src: url("../assets/fonts/Morabba/woff2/Morabba-Medium.woff2") format("woff2");
-}
-@font-face {
-  font-family: Morabba-Light;
-  font-style: normal;
-  font-weight: 400;
-  font-display: swap;
-  src: url("../assets/fonts/Morabba/woff2/Morabba-Light.woff2") format("woff2");
+@layer base {
+  /* fonts  */
+  @font-face {
+    font-family: dana-semibold;
+    font-style: normal;
+    font-weight: 700;
+    font-display: swap;
+    src: url("../assets/fonts/Dana/woff2/DanaFaNum-DemiBold.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-family: dana-medium;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../assets/fonts/Dana/woff2/DanaFaNum-Medium.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-family: dana-regular;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../assets/fonts/Dana/woff2/DanaFaNum-Regular.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-family: Morabba-Bold;
+    font-style: normal;
+    font-weight: 200 700;
+    font-display: swap;
+    src: url("../assets/fonts/Morabba/woff2/Morabba-Bold.woff2") format("woff2");
+  }
+  @font-face {
+    font-family: Morabba-Medium;
+    font-style: normal;
+    font-weight: 500;
+    font-display: swap;
+    src: url("../assets/fonts/Morabba/woff2/Morabba-Medium.woff2")
+      format("woff2");
+  }
+  @font-face {
+    font-family: Morabba-Light;
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url("../assets/fonts/Morabba/woff2/Morabba-Light.woff2")
+      format("woff2");
+  }
+
+  /* Bg Glow Animation  */
+  @keyframes glow {
+  0%,100% { transform: scale(1); opacity: .6; }
+  50% { transform: scale(1.15); opacity: .9; }
+  }
+
+  .bg-glow {
+    animation: glow 10s ease-in-out infinite;
+  }
+
 }
 
 @theme {
-
   /* Colors  */
   --color-orange-300: rgba(253, 186, 116, 1);
   --color-orange-200: rgba(254, 215, 170, 1);
@@ -67,10 +85,10 @@
   --color-brown-600: rgba(150, 114, 89, 1);
   --color-brown-300: rgba(219, 193, 172, 1);
   --color-brown-100: rgba(236, 224, 209, 1);
+  --color-black-900: #121212;
 
   /* Shadow  */
-  --shadow-light-mode: 0px 1px 10px 0px rgba(0, 0, 0, 0.05);
-  --shadow-dark-mode: 0px 1px 10px 0px rgba(0, 0, 0, 0.05);
+  --shadow-normal: 0px 1px 10px 0px rgba(0, 0, 0, 0.05);
 
   /* Fonts  */
   --font-dana-semibold: "dana-semibold";
@@ -80,11 +98,218 @@
   --font-morabba-medium: "Morabba-Medium";
   --font-morabba-light: "Morabba-Light";
 
+  --breakpoint-tablet: 868px;
+  --breakpoint-xs: 480px;
 
 
 }
 
-@layer base {
+@layer components {
 
+  /* Header  */
+  .header {
+    @apply mx-auto mt-9 bg-black/50 backdrop-blur-sm  rounded-full;
+  }
 
+  /* Navigation Menu Hover Effect */
+  .menu__link {
+    @apply after:absolute after:-bottom-1 after:right-0 after:w-0 after:h-0.5 after:bg-orange-200 after:transition-all transition-colors ease-in-out hover:after:w-full;
+  }
+
+  /* Shop Menu   */
+  #shop-menu {
+    @apply  group-hover:text-orange-200  transition-colors hover:text-orange-200;
+  }
+  /* Submenu  */
+  .shop-submenu {
+    @apply absolute top-full right-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible group-focus-within:opacity-100 group-focus-within:visible delay-75 transition-all bg-white dark:bg-zinc-700 w-52 text-zinc-700 dark:text-white text-base tracking-normal space-y-4 rounded-2xl border-t-[3px] px-6 py-5
+     border-t-orange-300 shadow-normal [&>a]:inline-block [&>a:hover]:text-orange-300 [&>a]:transition-colors;
+  }
+
+  /* center item  */
+  .center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .submenu {
+    @apply hidden font-dana-regular text-sm mt-3 text-zinc-600 dark:text-white flex-col pr-7 gap-y-3 relative;
+  }
+  .submenu--open {
+    @apply flex;
+  }
+  .submenu__item--active {
+    @apply after:content-[''] after:absolute after:w-1 after:h-1 after:top-0 after:bottom-0 after:right-0 after:m-auto after:bg-orange-300 after:rounded-full;
+    position: relative;
+    padding-right: 10px;
+    color: var(--color-orange-300);
+  }
+  .overlay {
+    @apply invisible opacity-0 md:hidden fixed inset-0 z-10 bg-black/40 backdrop-blur-[1px] transition-all ;
+  }
+  .overlay--visible {
+    @apply visible opacity-100 delay-75;
+  }
+
+  .home-bg {
+    @apply  bg-no-repeat bg-cover bg-position-[center_top] bg-[url('../assets/images/header-bg/headerBgMobile.webp')] xs:aspect-2/1 md:aspect-auto md:bg-[url('../assets/images/header-bg/headerBgDesktop.webp')] ; 
+  }
+
+  .circle {
+    @apply border-2 rounded-full;
+  }
+  .circle--lg  {
+    @apply absolute bottom-0 left-0 right-0 mx-auto hidden md:flex items-center justify-center translate-y-2/4 w-51 h-51 border-white/25;
+  }
+  .circle--md {
+    @apply  flex items-center justify-center w-36.25 h-36.25 border-white/50;
+  }
+  .circle--sm {
+    @apply  w-20 h-20 border-white/80;
+  }
+
+  /* Body Bg  */
+  @media screen and (min-width: 1024px) {
+    html.dark .products {
+      background-image: url('../assets/images/body-bg.png');
+    }
+    .products {
+      background: linear-gradient(rgba(243, 244, 246, 0.65)), linear-gradient(rgba(243, 244, 246, 0.65)) , url('../assets/images/body-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+
+  .products-title {
+    @apply font-morabba-medium text-2xl md:text-5xl text-zinc-700 dark:text-white;
+  }
+  .products-subtitle {
+    @apply font-morabba-light text-lg md:text-3xl text-zinc-700 dark:text-white mt-0.5 md:mt-1.5;
+  }
+  .products-link {
+    @apply flex items-center gap-x-0.5 md:gap-x-1 h-10 font-dana-regular text-orange-300 text-base md:text-xl md:hover:bg-orange-300/20 pr-3 pl-1 rounded-md transition-colors;
+  }
+  .products-box {
+    @apply flex flex-col justify-between p-2 md:p-5 bg-white dark:bg-zinc-700 rounded-2xl;
+  }
+  .offer::after {
+    content: "";
+    width: 100%;
+    height: 1px;
+    background-color: var(--color-red-500);
+    position: absolute;
+    inset: -1.2px 0 0 0;
+    margin: auto;
+  }
+
+  .category-banner__items--right {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.50%, rgba(0, 0, 0, 0.1) 100%),  url('../assets/images/categories/category-right.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+  .category-banner__items--left {
+    background: linear-gradient(270deg, rgba(0, 0, 0, 0.6) 33.50%, rgba(0, 0, 0, 0.1) 100%),  url('../assets/images/categories/category-left.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .blog-date::after {
+    content: "";
+    display: block;
+    position: absolute;
+    right: -20px;
+    width: 1px;
+    height: 100%;
+    background-color: var(--color-gray-300);
+    -webkit-border-radius: 100%;
+    -moz-border-radius: 100%;
+    -ms-border-radius: 100%;
+    -o-border-radius: 100%;
+    border-radius: 100%;
+}
+  html.dark .blog-date::after {
+    background-color: var(--color-gray-50);
+  }
+  @media screen and (min-width: 200px) {
+    .blog-date::after {
+      display: none;
+    }
+  }
+  @media screen and (min-width: 640px) {
+    .blog-date::after {
+      display: block;
+      right: -8px;
+    }
+  }
+  @media screen and (min-width: 768px) {
+    .blog-date::after {
+      display: block;
+      right: -20px;
+    }
+  }
+  @media screen and (min-width: 1024px) {
+    .blog-date::after {
+      display: block;
+      right: -8px;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    .blog-date::after {
+      display: block;
+      right: -20px;
+    }
+  }
+
+  .services-section {
+    @apply relative;
+  }
+  .services-section::after,
+  .services-section::before {
+    content: "";
+    display: block;
+    position: absolute;
+    background-color: var(--color-gray-300);
+    inset: 0;
+    margin: auto;
+  }
+  .services-section::after {
+    width: 100%;
+    height: 1px;
+  }
+  .services-section::before {
+    width: 1px;
+    height: calc(100% + 2rem);
+  }
+  html.dark .services-section::after,
+  html.dark .services-section::before {
+    background-color: rgba(255,255,255,0.1);
+  }
+  @media screen and (min-width: 640px) {
+    .services-section::after,
+    .services-section::before {
+      display: none;
+    }
+  }
+
+}
+
+@utility container {
+  @apply mx-auto px-4 lg:px-2.5;
+}
+
+@layer utilities {
+
+  .flex-col-center {
+    display: flex;
+    align-items: center;
+  }
+
+  .flex-center {
+    @apply flex items-center justify-center;
+  }
+
+  .ltr-text {
+    direction: ltr;
+    text-align: left;
+  }
 }
